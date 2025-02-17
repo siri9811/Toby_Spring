@@ -3,16 +3,19 @@ package tobyspring.hellospring;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import tobyspring.hellospring.payment.Payment;
+import tobyspring.hellospring.payment.PaymentService;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.net.URISyntaxException;
 import java.util.concurrent.TimeUnit;
 
 
 @Configuration
 public class  Client {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        BeanFactory beanFactory = new AnnotationConfigApplicationContext(ObjectFactory.class);
+    public static void main(String[] args) throws InterruptedException, IOException, URISyntaxException {
+        BeanFactory beanFactory = new AnnotationConfigApplicationContext(PaymentConfig.class);
         PaymentService paymentService = beanFactory.getBean("paymentService", PaymentService.class);
 
         Payment payment1 = paymentService.prepare(100L, "USD", BigDecimal.valueOf(50.7));

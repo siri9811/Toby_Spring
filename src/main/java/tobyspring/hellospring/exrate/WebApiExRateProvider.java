@@ -2,7 +2,6 @@ package tobyspring.hellospring.exrate;
 
 
 import tobyspring.hellospring.api.*;
-import tobyspring.hellospring.payment.ExRateProvider;
 
 import java.math.BigDecimal;
 

@@ -1,7 +1,6 @@
 package tobyspring.hellospring.exrate;
 
 import org.springframework.web.client.RestTemplate;
-import tobyspring.hellospring.payment.ExRateProvider;
 
 import java.math.BigDecimal;
 

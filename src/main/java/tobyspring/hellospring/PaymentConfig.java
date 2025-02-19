@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import tobyspring.hellospring.exrate.CachedExRateProvider;
 import tobyspring.hellospring.exrate.RestTemplatesExRateProvider;
-import tobyspring.hellospring.payment.ExRateProvider;
+import tobyspring.hellospring.exrate.ExRateProvider;
 import tobyspring.hellospring.payment.PaymentService;
 
 import java.time.Clock;

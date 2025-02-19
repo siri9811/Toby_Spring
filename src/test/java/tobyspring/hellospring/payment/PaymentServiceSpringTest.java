@@ -12,6 +12,7 @@ import tobyspring.hellospring.TestPaymentConfig;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.net.URISyntaxException;
 import java.time.Clock;
 import java.time.LocalDateTime;
 
@@ -29,7 +30,7 @@ class PaymentServiceSpringTest {
 
     @Test
     @DisplayName("preapre 메소드가 요구사항 3가지를 잘 충족했는지 검증")
-    void convertedAmount()  {
+    void convertedAmount() throws IOException, URISyntaxException {
         //exRate : 1000
         Payment payment = paymentService.prepare(1L,"USD", BigDecimal.TEN);
 
@@ -46,7 +47,7 @@ class PaymentServiceSpringTest {
     }
 
     @Test
-    void validUntil()  {
+    void validUntil() throws IOException, URISyntaxException {
         Payment payment = paymentService.prepare(1L,"USD",BigDecimal.TEN);
 
         LocalDateTime now = LocalDateTime.now(this.clock);

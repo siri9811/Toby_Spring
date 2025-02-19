@@ -1,19 +1,16 @@
 package tobyspring.hellospring.order;
 
-import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "orders")
+
 public class Order {
 
-    @Id
-    @GeneratedValue
+
     private Long id;
 
-    @Column(unique = true)
     private String no;
+
+    private BigDecimal total;
 
     public Order() {
     }
@@ -23,7 +20,9 @@ public class Order {
         this.total = total;
     }
 
-    private BigDecimal total;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;
@@ -33,6 +32,10 @@ public class Order {
         return no;
     }
 
+    public BigDecimal getTotal() {
+        return total;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -40,9 +43,5 @@ public class Order {
                 ", no='" + no + '\'' +
                 ", total=" + total +
                 '}';
-    }
-
-    public BigDecimal getTotal() {
-        return total;
     }
 }
